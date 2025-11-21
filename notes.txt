@@ -1,0 +1,9 @@
+rm -rf build lambda.zip
+mkdir build
+pip install --target build -r requirements.txt
+cp main.py build/
+cd build
+zip -r ../lambda.zip .
+cd ..
+
+

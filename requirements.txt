@@ -1,0 +1,6 @@
+boto3==1.40.69
+fastapi==0.121.3
+mangum==0.19.0
+pydantic==2.12.4
+python-dotenv==1.2.1
+python_jose==3.5.0
