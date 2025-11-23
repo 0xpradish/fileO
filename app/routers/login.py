@@ -1,9 +1,9 @@
 from fastapi import  HTTPException, Depends, APIRouter
 from jose import jwt
+from pydantic import BaseModel
+
 from ..auth import EMAIL,PASSWORD, SECRET_KEY, ALGORITHM, get_current_user
 
-
-from pydantic import BaseModel
 
 class LoginRequest(BaseModel):
     email: str
@@ -21,8 +21,6 @@ def login(req: LoginRequest):
 
     token = jwt.encode({"sub": req.email}, SECRET_KEY, algorithm=ALGORITHM)
     return {"token": token}
-
-
 
 
 
